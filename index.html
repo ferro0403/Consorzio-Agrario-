@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2f7d32" />
+  <title>Lista Ordini Consorzio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Offline • Local-first</p>
+        <h1>Lista Ordini Consorzio</h1>
+      </div>
+      <div class="status-pill" id="statusPill">Salvato in locale</div>
+    </header>
+
+    <nav class="desktop-nav" aria-label="Sezioni principali">
+      <button class="nav-btn active" data-section="order">Cose da ordinare</button>
+      <button class="nav-btn" data-section="products">Prodotti</button>
+      <button class="nav-btn" data-section="brands">Brand</button>
+      <button class="nav-btn" data-section="history">Storico ordini</button>
+    </nav>
+
+    <main id="app" tabindex="-1"></main>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Sezioni principali mobile">
+    <button class="nav-btn active" data-section="order"><span>🧺</span>Ordine</button>
+    <button class="nav-btn" data-section="products"><span>📦</span>Prodotti</button>
+    <button class="nav-btn" data-section="brands"><span>🏷️</span>Brand</button>
+    <button class="nav-btn" data-section="history"><span>🕘</span>Storico</button>
+  </nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="confirmModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+    <div class="modal-card">
+      <h2 id="confirmTitle">Conferma operazione</h2>
+      <p id="confirmMessage"></p>
+      <div class="actions row-actions">
+        <button class="btn secondary" id="confirmCancel">Annulla</button>
+        <button class="btn danger" id="confirmOk">Conferma</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
